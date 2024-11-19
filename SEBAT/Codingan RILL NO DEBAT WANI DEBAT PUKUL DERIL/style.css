@@ -1,0 +1,215 @@
+/* Gaya Umum */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('images/bg1.jpg') no-repeat center center fixed; /* Menambahkan gambar latar belakang */
+    background-size: cover; /* Menyesuaikan gambar dengan ukuran layar */
+}
+
+/* Menambahkan overlay gelap di header */
+header {
+    position: relative; /* Tambahkan ini untuk positioning overlay */
+    padding: 20px 0; /* Menambahkan padding untuk memberi ruang pada menu */
+}
+
+header::before {
+    content: ""; /* Konten kosong untuk overlay */
+    position: absolute; /* Mengatur posisi overlay */
+    top: 0; /* Posisi dari atas */
+    left: 0; /* Posisi dari kiri */
+    width: 100%; /* Lebar overlay 100% */
+    height: 100%; /* Tinggi overlay 100% */
+    background-color: rgba(0, 0, 0, 0.5); /* Warna hitam dengan transparansi */
+    z-index: 1; /* Mengatur agar overlay berada di atas gambar latar belakang header */
+}
+
+nav {
+    display: flex; /* Menyusun menu secara horizontal */
+    justify-content: flex-end; /* Menyelaraskan menu ke kanan */
+    padding: 10px 20px; /* Menambahkan padding di sekitar menu */
+    z-index: 2; /* Agar menu berada di atas overlay */
+    margin-top: 20px; /* Menambahkan margin atas untuk menjauhkan menu dari logo */
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 20px; /* Memberi jarak antar link */
+    border: none; /* Menghilangkan kotak/border */
+    background: none; /* Menghilangkan background */
+    padding: 0; /* Menghilangkan padding jika ada */
+}
+
+nav a:hover {
+    color: #ffcc00; /* Gaya hover untuk memberi efek saat mouse melayang di atas link */
+    text-decoration: underline; /* Memberi efek underline saat hover */
+}
+
+.container {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between; /* Memastikan elemen di header menyebar */
+    position: relative; /* Tambahkan ini untuk memastikan konten berada di atas overlay */
+    z-index: 2; /* Mengatur agar konten berada di atas overlay */
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+/* Gaya untuk Logo */
+.logo {
+    margin-left: 20px; /* Logo akan berada di kiri */
+    width: 200px; /* Ganti dengan ukuran logo sesuai kebutuhan */
+    height: auto; /* Menjaga aspek rasio */
+    display: block;
+}
+
+/* Gaya untuk Bagian Tentang Kami, Layanan Kami, Testimoni, dan Galeri */
+#about, #services, #testimonials, #gallery {
+    padding: 20px;
+    margin: 20px auto; /* Center horizontally */
+    max-width: 100%; /* Mengizinkan elemen untuk memenuhi lebar penuh */
+    background-color: rgba(104, 109, 118, 0.8); /* Warna biru muda dengan transparansi */
+    border-radius: 10px; /* Sudut membulat */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Bayangan untuk kedalaman */
+    text-align: center; /* Menyelaraskan teks di tengah */
+    color: #fff;
+}
+
+/* Galeri khusus */
+#services {
+    background-color: rgba(34, 40, 49, 0.8); /* Warna peach dengan transparansi */
+}
+
+#testimonials {
+    background-color: rgba(48, 71, 94, 0.8); /* Warna merah muda dengan transparansi */
+}
+
+#gallery {
+    background-color: rgba(55, 58, 64, 0.8); /* Warna hijau muda dengan transparansi */
+}
+
+/* Gaya untuk Galeri */
+.gallery-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px; /* Jarak antar gambar */
+}
+
+.gallery-container img {
+    width: 30%; /* Ganti ukuran gambar sesuai kebutuhan */
+    max-width: 300px; /* Ukuran maksimum gambar */
+    height: auto; /* Mempertahankan aspek rasio */
+    border-radius: 5px; /* Menghilangkan sudut tajam */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Bayangan untuk kedalaman */
+}
+
+/* Gaya untuk Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #000; /* Mengganti warna latar belakang footer menjadi hitam */
+    color: #fff; /* Mengganti warna teks footer menjadi putih */
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Gaya untuk Slideshow */
+.slideshow-container {
+    position: relative;
+    max-width: 80%; /* Mengatur lebar maksimum slideshow, Anda bisa mengubah ini sesuai kebutuhan */
+    margin: auto;
+    overflow: hidden;
+}
+
+.slide {
+    display: none; /* Menyembunyikan slide yang tidak aktif */
+    position: relative;
+    width: 100%;
+}
+
+.slide img {
+    width: 80%; /* Mengubah ukuran gambar menjadi 80% dari lebar slide */
+    height: auto; /* Menjaga aspek rasio */
+    margin: auto; /* Memusatkan gambar */
+    display: block; /* Memastikan gambar ditampilkan sebagai block element */
+}
+
+/* Panah navigasi untuk slideshow */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    background-color: rgba(0,0,0,0.5); /* Warna tombol dengan transparansi */
+}
+
+.next {
+    right: 0; /* Tempatkan di sebelah kanan */
+    border-radius: 3px 0 0 3px;
+}
+
+.prev {
+    left: 0; /* Tempatkan di sebelah kiri */
+    border-radius: 3px 0 0 3px;
+}
+
+/* Efek hover pada tombol */
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8); /* Warna saat panah disentuh */
+}
+
+/* Gaya untuk titik-titik indikator */
+.dots-container {
+    text-align: center;
+    padding: 10px;
+}
+
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb; /* Warna default titik */
+    border-radius: 50%; /* Membuat titik berbentuk bulat */
+    display: inline-block;
+    transition: background-color 0.6s ease; /* Transisi halus untuk perubahan warna */
+}
+
+.active, .dot:hover {
+    background-color: #000; /* Warna titik aktif dan saat hover */
+}
+
+/* Gaya Full Width Section */
+.full-width-section {
+    padding: 20px;
+    width: 100%; /* Lebar penuh */
+    background: rgba(255, 255, 255, 0.8); /* Putih dengan transparansi */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Menambahkan bayangan untuk kedalaman */
+    text-align: center; /* Memusatkan konten teks */
+}
+
+/* Responsivitas */
+@media (max-width: 768px) {
+    .full-width-section {
+        width: 100%; /* Lebar penuh pada layar kecil */
+        margin: 0; /* Pastikan tidak ada margin */
+    }
+
+    .slide img {
+        width: 90%; /* Mengurangi ukuran gambar untuk layar kecil */
+    }
+}
